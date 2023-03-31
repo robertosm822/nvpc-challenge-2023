@@ -5,7 +5,7 @@ class RepositoriesController{
         return datum/1000;
     }
     static orderByPush(){
-        let ascOrder = reposRobertoSm822.sort( function ( a, b ) { console.log(toTimestamp(b.pushed_at)); return toTimestamp(b.pushed_at) - toTimestamp(a.pushed_at); } );
+        let ascOrder = reposRobertoSm822.sort( function ( a, b ) { console.log(RepositoriesController.toTimestamp(b.pushed_at)); return RepositoriesController.toTimestamp(b.pushed_at) - RepositoriesController.toTimestamp(a.pushed_at); } );
         ascOrder = ascOrder.reverse();
         let html = RepositoriesController.showHtmlUl(ascOrder);
         jQuery("#prository-list").html(html);
@@ -13,7 +13,7 @@ class RepositoriesController{
         return ascOrder;
     }
     static orderByPushDesc(){
-        let ascOrder = reposRobertoSm822.reverse( function ( a, b ) {  return toTimestamp(b.pushed_at) - toTimestamp(a.pushed_at); } );
+        let ascOrder = reposRobertoSm822.reverse( function ( a, b ) {  return RepositoriesController.toTimestamp(b.pushed_at) - RepositoriesController.toTimestamp(a.pushed_at); } );
         //ascOrder = ascOrder.reverse();
         let html = RepositoriesController.showHtmlUl(ascOrder);
         jQuery("#prository-list").html(html);
