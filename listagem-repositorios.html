@@ -78,12 +78,12 @@
                 },
               };
               
-              $.ajax(settings).done(function (response) {
+              jQuery.ajax(settings).done(function (response) {
                 console.log(response);
                 htmlRepos = `<ul>
                     <li>*</li>
                 </ul>`;
-                $("#prository-list").html(htmlRepos);
+                jQuery("#prository-list").html(htmlRepos);
               });
         </script>
 </body>
