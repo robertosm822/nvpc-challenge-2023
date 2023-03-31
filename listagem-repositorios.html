@@ -67,7 +67,7 @@
     <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
         <script>
 
-            var settings = {
+            const settings = {
                 "url": "https://api.github.com/users/robertosm822/repos",
                 "method": "GET",
                 "timeout": 0,
@@ -76,15 +76,16 @@
                   "Authorization": "Bearer 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",
                   "Cookie": "logged_in=no"
                 },
-              };
-              
-              jQuery.ajax(settings).done(function (response) {
-                console.log(response);
-                htmlRepos = `<ul>
-                    <li>*</li>
-                </ul>`;
-                jQuery("#prository-list").html(htmlRepos);
-              });
+            };
+            jQuery(document).ready(function() {    
+                jQuery.ajax(settings).done(function (response) {
+                    console.log(response);
+                    htmlRepos = `<ul>
+                        <li>*</li>
+                    </ul>`;
+                    jQuery("#prository-list").html(htmlRepos);
+                });
+            });
         </script>
 </body>
 </html>
